@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} E-store products {% endblock %}
+{% block content %}
+
+<div class="container">
+  <br>
+  <div class="row">
+  <div class="col-12 col-md-12 col-lg-6">
+    <div style="min-width:18rem;">
+      <img src="{{product.image.url}}" alt="{{product.name}}">
+      <div class="col-12col-sm-12">
+      <h3>{{product.name}}</h3>
+      <p>{{product.description}}</p>
+      <p>{{product.price}}</p>
+        {% if product.stock <= 0 %}
+        <p class="text-justify">Out of stock</p>
+        {% else %}
+        <a class="btn btn-primary" href="#">Add to cart</a>
+        <br>
+        <br>
+        {% endif %}
+      </div>
+
+  </div>
+</div>
+</div>
+  </div>
+{% endblock %}

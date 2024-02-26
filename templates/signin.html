@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} E-store products {% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<h1> Enter your credentials and login</h1>
+
+<form action="/signin/" method="post">
+    {% csrf_token %}
+    <label for="">Enter your Usernsme </label>
+    <input type="text" id="username" name="username" placeholder="Enter Your Username" required>
+    <br>
+
+    <label for="">Enter Your Password </label>
+    <input type="password" id="password1" name="password1" placeholder="Enter Your Password" required>
+    <br>
+    <button type="submit">Login</button>
+
+</form>
+</body>
+</html>
+{% endblock %}
